@@ -66,7 +66,7 @@ export default function NavBar() {
                         About
                     </NavLink>
                 </nav>
-                <div>
+                <div className='inline-flex py-8 px-3 my-6'>
                     <SocialIcon url='https://github.com/lukethinnes' className='mr-4' target='_blank' fgColor='#fff' style={{ height: 35, width: 35 }} />
                     <SocialIcon url='https://www.linkedin.com/in/lucas-thinnes/' className='mr-4' target='_blank' fgColor='#fff' style={{ height: 35, width: 35 }} />
                     <SocialIcon url='https://lucasthinnes.medium.com/' className='mr-4' target='_blank' fgColor='#fff' style={{ height: 35, width: 35 }} />
