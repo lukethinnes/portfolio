@@ -2,10 +2,10 @@
 
 @import url("https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css");
 
-@import url("https://fonts.googleapis.com/css2?family=Amatic+SC:wght@700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans+Condensed:wght@300&display=swap");
 
-.cursive {
-  font-family: "Amatic SC", cursive;
+.open {
+  font-family: "Open Sans Condensed";
   font-weight: 700;
 }
 
