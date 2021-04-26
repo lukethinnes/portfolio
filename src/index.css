@@ -6,8 +6,14 @@
 
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300&family=Tangerine&display=swap");
 
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap");
+
 .body {
   font-family: "Roboto";
+}
+
+.greeting {
+  font-family: "Open Sans";
 }
 .open {
   font-family: "Tangerine";
