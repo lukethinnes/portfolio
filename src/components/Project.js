@@ -21,8 +21,8 @@ export default function Project() {
     return (
         <main className="bg-green-60 min-h-screen p-12">
             <section className='container mx-auto'>
-                <h1 className='text-5xl flex justify-center cursive'></h1>
-                <h2 className='text-lg text-gray-600 flex justify-center mb-12'>Here are my technical projects.</h2>
+                <h1 className='text-5xl flex justify-center greeting'>PROJECTS</h1>
+                <h2 className='text-lg text-gray-400 flex justify-center mb-12 p-12 greeting'>Here are my technical projects.</h2>
                 <section className='grid grid-cols-2 gap-8'>
                     {projectData && projectData.map((project, index) => (
                     <article className='relative rounded-lg shadow-xl bg-white p-16'>
