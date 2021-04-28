@@ -1,24 +1,45 @@
-import React from 'react'
-import Image from '../me.jpg'
+import React, { useEffect, useState } from 'react';
+import imageUrlBuilder from '@sanity/image-url';
+import motions from '../motions.png';
+import sanityClient from '../client.js';
+import BlockContent from '@sanity/block-content-to-react';
+
+const builder = imageUrlBuilder(sanityClient);
+function urlFor(source) {
+    return builder.image(source)
+}
 
 export default function About() {
-    return (
+    const [author, setAuthor] = useState(null)
 
-    <main className="bg-green-60 min-h-screen p-12 mb-12">
-        <section className='container mx-auto'>
-                <h1 className='text-5xl flex justify-center greeting mb-12'>ABOUT ME</h1>
-                <img className='flex justify-center max-h-80 p-18 mx-auto mb-12' src={Image} alt='me'/>
-                <p className='text-lg text-gray-400 flex justify-center mb-12 greeting'>
-                    I am a full stack software engineer working with HTML / CSS / JavaScript / Ruby / Rails / React / React Native. 
-                </p>
-                <p className='text-lg text-gray-400 flex justify-center mb-12 greeting'>
-                    I have a professional background in residential construction, which taught me the extreme value of discipline and consistency while managing projects. 
-                </p>
-                <p className='text-lg text-gray-400 flex justify-center mb-12 greeting'>
-                    In my spare time, I am passionate about music and when I am away from the screen, you can find me reading, meditating or enjoying the great outdoors.
-                </p>
-                <span className='text-lg text-gray-400 flex justify-center mb-12 greeting'>If you would like to know more about me, feel free to reach out via LinkedIn!</span>
-            </section>
+    useEffect(() => {
+        sanityClient.fetch(`*[_type == 'author']{
+            name,
+            bio,
+            'authorImage': image.asset->url
+        }`).then((data) => setAuthor(data[0]))
+        .catch(console.error)
+    }, [])
+
+    if(!author) return <div>Loading...</div>
+    
+    return (
+        <main className='relative'>
+            <img src={motions} alt='Abstract' className='absolute w-full' />
+            <div className='p-10 lg:pt-48 container mx-auto relative'>
+                <section className='bg-gray-900 rounded-lg shadow-2xl lg:flex pd-20'>
+                    <img src={urlFor(author.authorImage).url()} className='rounded w-32 h-32 lg:w-64 lg:h-64 mr-8' alt={author.name} />
+                    <div className='text-lg text-white flex flex-col justify-center'>
+                        <h1 className='greeting text-6xl text-white mb-4'>
+                            Hello! I am{' '}
+                            <span className='text-white'>{author.name}.</span>
+                        </h1>
+                        <div className='prose lg:prose-xl text-gray-200 greeting'>
+                            <BlockContent blocks={author.bio} projectId='4p1njx99' dataset='production' />
+                        </div>
+                    </div>
+                </section>
+                </div>
         </main>
     )
 }

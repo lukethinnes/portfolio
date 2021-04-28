@@ -33,7 +33,8 @@ export default function NavBar() {
                     my-6 
                     text-white
                     rounded
-                    hover:text-green-900'
+                    hover:text-gray-500
+                    greeting'
                     activeClassName='text-red-100 bg-gray-400'
                     >
                         Projects
@@ -47,10 +48,10 @@ export default function NavBar() {
                     my-6 
                     text-white
                     rounded
-                    hover:text-green-900
-                    
+                    hover:text-gray-500
+                    greeting
                     '>
-                        Blog Posts
+                        Blog
                     </NavLink>
                     <NavLink to='/about'
                     activeClassName='text-red-100 bg-gray-400'
@@ -61,9 +62,10 @@ export default function NavBar() {
                         my-6 
                         text-white
                         rounded
-                        hover:text-green-900
+                        hover:text-gray-500
+                        greeting
                     '>
-                        About
+                        About Me
                     </NavLink>
                 </nav>
                 <div className='inline-flex py-8 px-3 my-6'>
