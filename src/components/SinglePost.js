@@ -57,7 +57,7 @@ export default function SinglePost() {
                     className='w-full object-full cover-top'
                     style={{ height: '400px' }} />
                 </header>
-                <div className='px-16 lg:px-48 py-12 lg:py-20 prose lg:Lprose-xl max-w-full'>
+                <div className='px-16 lg:px-48 py-12 lg:py-20 prose lg:Lprose-xl max-w-full bg-gray-900 text-white greeting'>
                     <BlockContent blocks={singlePost.body} projectId='4p1njx99' dataset='production' />
                     </div>
             </article>

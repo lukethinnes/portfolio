@@ -12,17 +12,17 @@ export default function NavBar() {
                         exact 
                         activeClassName='text-white'
                         className='
-                        inline-flex 
-                        items-center 
-                        py-8 px-3 
-                        mr-4 
-                        text-white
-                        hover:text-green
-                        text-4xl
-                        font-bold
-                        open
-                        tracking-widest
-                    '>
+                            inline-flex 
+                            items-center 
+                            py-8 px-3 
+                            mr-4 
+                            text-white
+                            hover:text-green
+                            text-4xl
+                            font-bold
+                            open
+                            tracking-widest
+                        '>
                         LUCAS THINNES
                     </NavLink>
                     <NavLink to='/project'
