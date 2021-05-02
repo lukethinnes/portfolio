@@ -1,5 +1,5 @@
 import React from 'react'
-import image from '../motions.png'
+import image from '../test.jpg'
 
 export default function Home() {
     return (
