@@ -8,6 +8,13 @@ export default function Project() {
     useEffect(() => {
         sanityClient.fetch(`*[_type == 'project']{
             title,
+            mainImage{
+                    asset->{
+                        _id,
+                        url
+                    },
+                    alt
+                },
             date,
             place,
             description,
@@ -34,6 +41,11 @@ export default function Project() {
                             target='_blank'
                             >{project.title}</a>
                         </h3>
+                        <img 
+                            alt={project.mainImage.alt}
+                            className='rounder-r'
+                            src={project.mainImage.asset.url}
+                        />
                         <div className='text-gray-500 text-xs space-x-4'>
                             <span>
                                 <strong className='fond-bold'>Finished on</strong>:{' '}
